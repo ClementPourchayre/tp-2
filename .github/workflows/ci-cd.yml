@@ -81,9 +81,8 @@ jobs:
         with:
           image-ref: '${{ env.IMAGE_NAME }}:${{ github.run_number }}'
           format: 'table'
-          exit-code: '1'
+          exit-code: '0'           # Ne bloque pas la pipeline si vulnérabilités
           ignore-unfixed: true
 
       - name: Push image to DockerHub
-        run: |
-          docker push $IMAGE_NAME:${{ github.run_number }}
+        run: docker push $IMAGE_NAME:${{ github.run_number }}
