@@ -1,5 +1,6 @@
 from flask import Flask
-from app.utils import get_message
+from utils import get_message
+
 
 app = Flask(__name__)
 
